@@ -217,9 +217,18 @@ const RBY_VANILLA: {[name: string]: MoveData} = {
 const RBY_COLORPLUS: {[name: string]: DeepPartial<MoveData>} = {
   // updates
   Bite: {type: 'Dark'},
+  Gust: {type: 'Flying'},
   'Karate Chop': {type: 'Fighting'},
   // gsc moves
+  Crunch: {bp: 80, type: 'Dark'},
+  'Dragon Breath': {bp: 60, type: 'Dragon'},
+  'Feint Attack': {bp: 60, type: 'Dark'},
   'Giga Drain': {bp: 60, type: 'Grass', drain: [1, 2]},
+  'Iron Tail': {bp: 100, type: 'Steel'},
+  'Metal Claw': {bp: 50, type: 'Steel'},
+  'Shadow Ball': {bp: 80, type: 'Ghost'},
+  'Sludge Bomb': {bp: 90, type: 'Poison'},
+  'Steel Wing': {bp: 70, type: 'Steel'},
 };
 
 const RBY: {[name: string]: MoveData} = extend(true, {}, RBY_VANILLA, RBY_COLORPLUS);

@@ -802,10 +802,60 @@ const RBY_COLORPLUS: {[name: string]: DeepPartial<SpeciesData>} = {
   Magnemite: {types: ['Electric', 'Steel']},
   Magneton: {types: ['Electric', 'Steel']},
   // evos
+  Bellossom: {
+    types: ['Grass'],
+    bs: {hp: 75, at: 80, df: 85, sp: 50, sl: 100},
+    weightkg: 5.8,
+  },
   Blissey: {
     types: ['Normal'],
     bs: {hp: 255, at: 10, df: 10, sp: 55, sl: 135},
     weightkg: 46.8,
+  },
+  Crobat: {
+    types: ['Poison', 'Flying'],
+    bs: {hp: 85, at: 90, df: 80, sp: 130, sl: 80},
+    weightkg: 75,
+  },
+  Espeon: {
+    types: ['Psychic'],
+    bs: {hp: 65, at: 65, df: 60, sp: 110, sl: 130},
+    weightkg: 26.5,
+  },
+  Kingdra: {
+    types: ['Water', 'Dragon'],
+    bs: {hp: 75, at: 95, df: 95, sp: 85, sl: 95},
+    weightkg: 152,
+  },
+  Politoed: {
+    types: ['Water'],
+    bs: {hp: 90, at: 75, df: 75, sp: 70, sl: 100},
+    weightkg: 33.9,
+  },
+  Porygon2: {
+    types: ['Normal'],
+    bs: {hp: 85, at: 80, df: 90, sp: 60, sl: 105},
+    weightkg: 32.5,
+  },
+  Scizor: {
+    types: ['Bug', 'Steel'],
+    bs: {hp: 70, at: 130, df: 100, sp: 65, sl: 55},
+    weightkg: 118,
+  },
+  Slowking: {
+    types: ['Water', 'Psychic'],
+    bs: {hp: 95, at: 75, df: 80, sp: 30, sl: 110},
+    weightkg: 79.5,
+  },
+  Steelix: {
+    types: ['Steel', 'Ground'],
+    bs: {hp: 75, at: 85, df: 200, sp: 30, sl: 55},
+    weightkg: 400,
+  },
+  Umbreon: {
+    types: ['Dark'], 
+    bs: {hp: 95, at: 65, df: 110, sp: 65, sl: 130},
+    weightkg: 27,
   },
 };
 
