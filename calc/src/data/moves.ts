@@ -43,7 +43,7 @@ export interface MoveData {
   readonly isWind?: boolean;
 }
 
-const RBY: {[name: string]: MoveData} = {
+const RBY_VANILLA: {[name: string]: MoveData} = {
   '(No Move)': {bp: 0, category: 'Status', type: 'Normal'},
   Absorb: {bp: 20, type: 'Grass', drain: [1, 2]},
   Acid: {bp: 40, type: 'Poison'},
@@ -213,6 +213,16 @@ const RBY: {[name: string]: MoveData} = {
   'Water Gun': {bp: 40, type: 'Water'},
   Withdraw: {bp: 0, category: 'Status', type: 'Water'},
 };
+// ColorPlus Patch
+const RBY_COLORPLUS: {[name: string]: DeepPartial<MoveData>} = {
+  // updates
+  Bite: {type: 'Dark'},
+  'Karate Chop': {type: 'Fighting'},
+  // gsc moves
+  'Giga Drain': {bp: 60, type: 'Grass', drain: [1, 2]},
+};
+
+const RBY: {[name: string]: MoveData} = extend(true, {}, RBY_VANILLA, RBY_COLORPLUS);
 
 const GSC_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   Bide: {type: 'Normal'},
@@ -337,7 +347,7 @@ const GSC_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'Vital Throw': {bp: 70, type: 'Fighting'},
 };
 
-const GSC: {[name: string]: MoveData} = extend(true, {}, RBY, GSC_PATCH);
+const GSC: {[name: string]: MoveData} = extend(true, {}, RBY_VANILLA, GSC_PATCH);
 
 const ADV_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   Acid: {target: 'allAdjacentFoes'},

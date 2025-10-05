@@ -5,7 +5,7 @@ export type TypeChart = {
   [type in I.TypeName]?: {[type in I.TypeName]?: number};
 };
 
-const RBY: TypeChart = {
+const RBY_VANILLA: TypeChart = {
   '???': {
     Normal: 1,
     Grass: 1,
@@ -294,8 +294,69 @@ const RBY: TypeChart = {
     Dragon: 2,
   },
 };
+// ColorPlus Patch
+const RBY_COLORPLUS: TypeChart = extend(true, {}, RBY_VANILLA, {
+  '???': {Dark: 1, Steel: 1},
+  Normal: {Dark: 1, Steel: 0.5},
+  Grass: {Dark: 1, Steel: 0.5},
+  Fire: {Dark: 1, Steel: 2},
+  Water: {Dark: 1, Steel: 1},
+  Electric: {Dark: 1, Steel: 1},
+  Ice: {Dark: 1, Steel: 0.5},
+  Flying: {Dark: 1, Steel: 0.5},
+  Bug: {Dark: 2, Steel: 0.5},
+  Poison: {Dark: 1, Steel: 0},
+  Ground: {Dark: 1, Steel: 2},
+  Rock: {Dark: 1, Steel: 0.5},
+  Fighting: {Dark: 2, Steel: 2},
+  Psychic: {Dark: 0, Steel: 0.5},
+  Ghost: {Psychic: 2, Dark: 0.5, Steel: 0.5},
+  Dragon: {Dark: 1, Steel: 0.5},
+  Dark: {
+    '???': 1,
+    Normal: 1,
+    Grass: 1,
+    Fire: 1,
+    Water: 1,
+    Electric: 1,
+    Ice: 1,
+    Flying: 1,
+    Bug: 1,
+    Poison: 1,
+    Ground: 1,
+    Rock: 1,
+    Fighting: 0.5,
+    Psychic: 2,
+    Ghost: 2,
+    Dragon: 1,
+    Dark: 0.5,
+    Steel: 0.5,
+  },
+  Steel: {
+    '???': 1,
+    Normal: 1,
+    Grass: 1,
+    Fire: 0.5,
+    Water: 0.5,
+    Electric: 0.5,
+    Ice: 2,
+    Flying: 1,
+    Bug: 1,
+    Poison: 1,
+    Ground: 1,
+    Rock: 2,
+    Fighting: 1,
+    Psychic: 1,
+    Ghost: 1,
+    Dragon: 1,
+    Dark: 1,
+    Steel: 0.5,
+  },
+});
 
-const GSC: TypeChart = extend(true, {}, RBY, {
+const RBY = RBY_COLORPLUS;
+
+const GSC: TypeChart = extend(true, {}, RBY_VANILLA, {
   '???': {Dark: 1, Steel: 1},
   Normal: {Dark: 1, Steel: 0.5},
   Grass: {Dark: 1, Steel: 0.5},

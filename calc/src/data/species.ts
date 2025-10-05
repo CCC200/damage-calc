@@ -21,7 +21,7 @@ export interface SpeciesData {
   readonly abilities?: {0: string}; // ability
 }
 
-const RBY: {[name: string]: SpeciesData} = {
+const RBY_VANILLA: {[name: string]: SpeciesData} = {
   Abra: {
     types: ['Psychic'],
     bs: {hp: 25, at: 20, df: 15, sp: 90, sl: 105},
@@ -796,6 +796,20 @@ const RBY: {[name: string]: SpeciesData} = {
     nfe: true,
   },
 };
+// ColorPlus Patch
+const RBY_COLORPLUS: {[name: string]: DeepPartial<SpeciesData>} = {
+  // updates
+  Magnemite: {types: ['Electric', 'Steel']},
+  Magneton: {types: ['Electric', 'Steel']},
+  // evos
+  Blissey: {
+    types: ['Normal'],
+    bs: {hp: 255, at: 10, df: 10, sp: 55, sl: 135},
+    weightkg: 46.8,
+  },
+};
+
+const RBY: {[name: string]: SpeciesData} = extend(true, {}, RBY_VANILLA, RBY_COLORPLUS);
 
 const GSC_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   // gen 1 pokemon changes
@@ -1481,7 +1495,7 @@ const GSC_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     weightkg: 38,
   },
 };
-const GSC: {[name: string]: SpeciesData} = extend(true, {}, RBY, GSC_PATCH);
+const GSC: {[name: string]: SpeciesData} = extend(true, {}, RBY_VANILLA, GSC_PATCH);
 
 const ADV_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   // gen 1 pokemon changes
