@@ -4942,7 +4942,41 @@ const SV_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   },
 };
 
-const SV: {[name: string]: MoveData} = extend(true, {}, SS, SV_PATCH);
+const SV_VANILLA: {[name: string]: MoveData} = extend(true, {}, SS, SV_PATCH);
+
+// Polished Crystal Patch
+const POLISHED_PATCH: {[name: string]: DeepPartial<MoveData>} = {
+  Crabhammer: {bp: 95},
+  Cut: {bp: 60, type: 'Steel'},
+  Dig: {bp: 90},
+  'Fire Spin': {bp: 40},
+  'Fury Swipes': {bp: 20},
+  'Hidden Power': {bp: 70},
+  'Hidden Power Bug': {bp: 70},
+  'Hidden Power Dark': {bp: 70},
+  'Hidden Power Dragon': {bp: 70},
+  'Hidden Power Electric': {bp: 70},
+  'Hidden Power Fighting': {bp: 70},
+  'Hidden Power Fire': {bp: 70},
+  'Hidden Power Flying': {bp: 70},
+  'Hidden Power Ghost': {bp: 70},
+  'Hidden Power Grass': {bp: 70},
+  'Hidden Power Ground': {bp: 70},
+  'Hidden Power Ice': {bp: 70},
+  'Hidden Power Poison': {bp: 70},
+  'Hidden Power Psychic': {bp: 70},
+  'Hidden Power Rock': {bp: 70},
+  'Hidden Power Steel': {bp: 70},
+  'Hidden Power Water': {bp: 70},
+  Moonlight: {type: 'Normal'},
+  Octazooka: {bp: 75},
+  'Pain Split': {type: 'Ghost'},
+  Scald: {bp: 70},
+  Strength: {type: 'Fighting'},
+  Whirlpool: {bp: 40},
+};
+
+const SV: {[name: string]: MoveData} = extend(true, {}, SV_VANILLA, POLISHED_PATCH);
 
 export const MOVES = [{}, RBY, GSC, ADV, DPP, BW, XY, SM, SS, SV];
 

@@ -1520,6 +1520,11 @@ export function calculateDefenseSMSSSV(
     defense = pokeRound((defense * 3) / 2);
     desc.weather = field.weather;
   }
+  // MOD change for Polished
+  if (field.hasWeather('Hail') && defender.hasType('Ice') && hitsPhysical) {
+    defense = pokeRound((defense * 3) / 2);
+    desc.weather = field.weather;
+  }
 
   const dfMods = calculateDfModsSMSSSV(
     gen,

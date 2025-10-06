@@ -470,7 +470,7 @@ SS.push('Utility Umbrella', 'Vile Vial');
 // Because we support National Dex all Past items are added back in
 SS.push(...GSC_ONLY, 'Old Amber');
 
-const SV = SS.concat([
+const SV_VANILLA = SS.concat([
   'Adamant Crystal',
   'Auspicious Armor',
   'Ability Shield',
@@ -493,6 +493,11 @@ const SV = SS.concat([
   'Unremarkable Teacup',
   'Wellspring Mask',
 ]);
+// Polished Crystal Patch
+const POLISHED_PATCH = SV_VANILLA.concat([
+  'Armor Suit',
+]);
+const SV = POLISHED_PATCH;
 
 const BERRIES: {[berry: string]: {t: I.TypeName; p: number}} = {
   'Aguav Berry': {t: 'Dragon', p: 80},
