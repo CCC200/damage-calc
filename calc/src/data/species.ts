@@ -10129,7 +10129,430 @@ const SV_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   },
 };
 
-const SV: {[name: string]: SpeciesData} = extend(true, {}, SS, SV_PATCH, PLA_PATCH);
+const SV_VANILLA: {[name: string]: SpeciesData} = extend(true, {}, SS, SV_PATCH, PLA_PATCH);
+
+// Polished Crystal Patch
+const POLISHED_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
+  Ampharos: {
+    bs: {hp: 95, at: 75, df: 90, sa: 125, sd: 95, sp: 65},
+    types: ["Electric", "Dragon"],
+  },
+  Annihilape: {
+    abilities: {0: "Gorilla Tactics"},
+  },
+  Ariados: {
+    bs: {hp: 70, at: 90, df: 70, sa: 60, sd: 70, sp: 80},
+    types: ["Bug", "Dark"],
+  },
+  Articuno: {
+    abilities: {0: "Pressure"},
+  },
+  Azumarill: {
+    bs: {hp: 100, at: 50, df: 80, sa: 90, sd: 80, sp: 50},
+  },
+  Bayleef: {
+    abilities: {0: "Overgrow"},
+  },
+  Beedrill: {
+    bs: {hp: 65, at: 100, df: 40, sa: 45, sd: 90, sp: 115},
+  },
+  Bellossom: {
+    bs: {hp: 75, at: 80, df: 95, sa: 100, sd: 110, sp: 50},
+    types: ["Grass", "Fairy"],
+    abilities: {0: "Chlorophyll"},
+  },
+  Blastoise: {
+    types: ["Water", "Steel"],
+  },
+  Butterfree: {
+    bs: {hp: 60, at: 45, df: 50, sa: 110, sd: 110, sp: 80},
+    types: ["Bug", "Psychic"],
+    abilities: {0: "Compound Eyes"},
+  },
+  Celebi: {
+    types: ["Grass", "Fairy"],
+    abilities: {0: "Natural Cure"},
+  },
+  Charizard: {
+    bs: {hp: 78, at: 94, df: 78, sa: 99, sd: 85, sp: 100},
+    types: ["Fire", "Dragon"],
+    abilities: {0: "Blaze"},
+  },
+  Chikorita: {
+    abilities: {0: "Overgrow"},
+  },
+  Clodsire: {
+    bs: {hp: 130, at: 85, df: 70, sa: 45, sd: 100, sp: 20},
+  },
+  'Corsola-Galar': {
+    types: ["Ghost", "Rock"],
+  },
+  Corsola: {
+    bs: {hp: 65, at: 55, df: 115, sa: 105, sd: 115, sp: 35},
+  },
+  Crobat: {
+    abilities: {0: "Inner Focus"},
+  },
+  Croconaw: {
+    abilities: {0: "Torrent"},
+  },
+  Cubone: {
+    abilities: {0: "Rock Head"},
+  },
+  Cursola: {
+    types: ["Ghost", "Rock"],
+  },
+  Cyndaquil: {
+    abilities: {0: "Blaze"},
+  },
+  Delibird: {
+    bs: {hp: 55, at: 85, df: 55, sa: 95, sd: 55, sp: 105},
+  },
+  Dewgong: {
+    bs: {hp: 90, at: 70, df: 80, sa: 80, sd: 95, sp: 70},
+  },
+  Ditto: {
+    bs: {hp: 78, at: 28, df: 48, sa: 28, sd: 48, sp: 108},
+  },
+  Dragonite: {
+    abilities: {0: "Inner Focus"},
+  },
+  Dudunsparce: {
+    types: ["Normal", "Dragon"],
+  },
+  Dunsparce: {
+    types: ["Normal", "Ground"],
+    abilities: {0: "Serene Grace"},
+  },
+  Electabuzz: {
+    bs: {hp: 65, at: 88, df: 57, sa: 95, sd: 85, sp: 105},
+  },
+  Electivire: {
+    bs: {hp: 75, at: 123, df: 67, sa: 95, sd: 85, sp: 105},
+    types: ["Electric", "Fighting"],
+  },
+  Elekid: {
+    bs: {hp: 50, at: 63, df: 37, sa: 65, sd: 55, sp: 100},
+  },
+  Entei: {
+    abilities: {0: "Pressure"},
+  },
+  Espeon: {
+    abilities: {0: "Synchronize"},
+  },
+  'Farfetch\u2019d': {
+    bs: {hp: 55, at: 110, df: 55, sa: 60, sd: 65, sp: 105},
+  },
+  Farigiraf: {
+    bs: {hp: 120, at: 90, df: 70, sa: 120, sd: 70, sp: 70},
+    types: ["Psychic", "Dark"],
+  },
+  Fearow: {
+    bs: {hp: 75, at: 99, df: 65, sa: 66, sd: 66, sp: 101},
+  },
+  Feraligatr: {
+    types: ["Water", "Dark"],
+    abilities: {0: "Torrent"},
+  },
+  Flaaffy: {
+    bs: {hp: 70, at: 60, df: 60, sa: 85, sd: 65, sp: 50},
+    abilities: {0: "Static"},
+  },
+  Flareon: {
+    abilities: {0: "Flash Fire"},
+  },
+  Furret: {
+    bs: {hp: 85, at: 86, df: 64, sa: 45, sd: 55, sp: 108},
+  },
+  Gengar: {
+    abilities: {0: "Cursed Body"},
+  },
+  Girafarig: {
+    bs: {hp: 70, at: 80, df: 65, sa: 100, sd: 65, sp: 95},
+    types: ["Psychic", "Dark"],
+  },
+  Glaceon: {
+    abilities: {0: "Snow Cloak"},
+  },
+  Golbat: {
+    abilities: {0: "Inner Focus"},
+  },
+  Golduck: {
+    types: ["Water", "Psychic"],
+  },
+  'Ho-Oh': {
+    abilities: {0: "Pressure"},
+  },
+  Honchkrow: {
+    bs: {hp: 105, at: 125, df: 52, sa: 105, sd: 52, sp: 71},
+  },
+  Igglybuff: {
+    abilities: {0: "Cute Charm"},
+  },
+  Jigglypuff: {
+    abilities: {0: "Cute Charm"},
+  },
+  Jolteon: {
+    abilities: {0: "Volt Absorb"},
+  },
+  Jumpluff: {
+    bs: {hp: 95, at: 55, df: 70, sa: 55, sd: 95, sp: 110},
+  },
+  Jynx: {
+    bs: {hp: 70, at: 60, df: 40, sa: 120, sd: 100, sp: 95},
+    abilities: {0: "Oblivious"},
+  },
+  Kangaskhan: {
+    abilities: {0: "Early Bird"},
+  },
+  Lanturn: {
+    bs: {hp: 125, at: 58, df: 58, sa: 86, sd: 86, sp: 67},
+  },
+  Larvitar: {
+    abilities: {0: "Guts"},
+  },
+  Leafeon: {
+    abilities: {0: "Leaf Guard"},
+  },
+  Ledian: {
+    bs: {hp: 55, at: 95, df: 50, sa: 35, sd: 110, sp: 85},
+    types: ["Bug", "Fighting"],
+  },
+  Ledyba: {
+    bs: {hp: 40, at: 40, df: 30, sa: 20, sd: 80, sp: 55},
+  },
+  Lugia: {
+    types: ["Water", "Flying"],
+    abilities: {0: "Pressure"},
+  },
+  Magby: {
+    bs: {hp: 50, at: 75, df: 37, sa: 70, sd: 55, sp: 83},
+  },
+  Magcargo: {
+    bs: {hp: 60, at: 50, df: 135, sa: 115, sd: 115, sp: 30},
+  },
+  Magmortar: {
+    bs: {hp: 75, at: 95, df: 67, sa: 125, sd: 95, sp: 93},
+    types: ["Fire", "Fighting"],
+  },
+  Magnemite: {
+    abilities: {0: "Magnet Pull"},
+  },
+  Magneton: {
+    abilities: {0: "Magnet Pull"},
+  },
+  Magnezone: {
+    abilities: {0: "Magnet Pull"},
+  },
+  Mareep: {
+    abilities: {0: "Static"},
+  },
+  'Marowak-Alola': {
+    bs: {hp: 60, at: 80, df: 110, sa: 50, sd: 80, sp: 70},
+  },
+  Marowak: {
+    bs: {hp: 60, at: 80, df: 110, sa: 50, sd: 80, sp: 70},
+  },
+  Meganium: {
+    types: ["Grass", "Fairy"],
+    abilities: {0: "Overgrow"},
+  },
+  Mew: {
+    abilities: {0: "Synchronize"},
+    bs: {hp: 106, at: 110, df: 100, sa: 134, sd: 100, sp: 130},
+    types: ["Psychic", "Steel"],
+  },
+  Mismagius: {
+    bs: {hp: 60, at: 60, df: 60, sa: 110, sd: 110, sp: 110},
+    types: ["Ghost", "Fairy"],
+  },
+  Moltres: {
+    abilities: {0: "Pressure"},
+  },
+  'Mr. Mime': {
+    bs: {hp: 50, at: 45, df: 65, sa: 100, sd: 125, sp: 100},
+  },
+  Ninetales: {
+    types: ["Fire", "Ghost"],
+    abilities: {0: "Flash Fire"},
+  },
+  Noctowl: {
+    bs: {hp: 100, at: 50, df: 50, sa: 96, sd: 96, sp: 70},
+    types: ["Ghost", "Flying"],
+  },
+  Octillery: {
+    types: ["Water", "Fire"],
+  },
+  Onix: {
+    bs: {hp: 35, at: 80, df: 160, sa: 30, sd: 45, sp: 70},
+  },
+  Parasect: {
+    bs: {hp: 60, at: 115, df: 100, sa: 60, sd: 80, sp: 30},
+  },
+  Pidgeot: {
+    bs: {hp: 93, at: 80, df: 75, sa: 90, sd: 70, sp: 102},
+  },
+  Pikachu: {
+    bs: {hp: 35, at: 65, df: 40, sa: 60, sd: 50, sp: 95},
+  },
+  Politoed: {
+    bs: {hp: 90, at: 75, df: 80, sa: 90, sd: 100, sp: 80},
+    types: ["Water", "Grass"],
+  },
+  Poliwrath: {
+    bs: {hp: 90, at: 95, df: 100, sa: 70, sd: 90, sp: 70},
+  },
+  Primeape: {
+    abilities: {0: "Gorilla Tactics"},
+  },
+  Pupitar: {
+    abilities: {0: "Shed Skin"},
+  },
+  Quagsire: {
+    bs: {hp: 95, at: 95, df: 95, sa: 65, sd: 65, sp: 35},
+  },
+  Quilava: {
+    abilities: {0: "Blaze"},
+  },
+  Qwilfish: {
+    bs: {hp: 65, at: 100, df: 100, sa: 75, sd: 55, sp: 85},
+  },
+  'Raichu-Alola': {
+    bs: {hp: 60, at: 95, df: 50, sa: 105, sd: 85, sp: 121},
+  },
+  Raichu: {
+    bs: {hp: 60, at: 100, df: 55, sa: 100, sd: 80, sp: 121},
+  },
+  Raikou: {
+    abilities: {0: "Pressure"},
+  },
+  Rapidash: {
+    types: ["Fire", "Fairy"],
+  },
+  'Raticate-Alola': {
+    bs: {hp: 85, at: 81, df: 70, sa: 40, sd: 80, sp: 87},
+  },
+  Raticate: {
+    bs: {hp: 65, at: 91, df: 60, sa: 50, sd: 70, sp: 107},
+  },
+  Rhydon: {
+    bs: {hp: 110, at: 130, df: 120, sa: 45, sd: 50, sp: 40},
+    abilities: {0: "Rock Head"},
+  },
+  Rhyhorn: {
+    abilities: {0: "Rock Head"},
+  },
+  Rhyperior: {
+    bs: {hp: 120, at: 140, df: 130, sa: 55, sd: 60, sp: 40},
+    types: ["Steel", "Rock"],
+  },
+  Seaking: {
+    bs: {hp: 80, at: 102, df: 65, sa: 65, sd: 80, sp: 88},
+  },
+  Shuckle: {
+    abilities: {0: "Solid Rock"},
+  },
+  Skarmory: {
+    bs: {hp: 85, at: 80, df: 140, sa: 40, sd: 70, sp: 70},
+  },
+  Skiploom: {
+    bs: {hp: 65, at: 45, df: 50, sa: 45, sd: 65, sp: 80},
+  },
+  'Slowbro-Galar': {
+    bs: {hp: 95, at: 100, df: 100, sa: 100, sd: 75, sp: 30},
+  },
+  Slowbro: {
+    bs: {hp: 95, at: 75, df: 120, sa: 100, sd: 80, sp: 30},
+  },
+  'Slowking-Galar': {
+    bs: {hp: 95, at: 65, df: 80, sa: 110, sd: 120, sp: 30},
+  },
+  Slowking: {
+    bs: {hp: 95, at: 75, df: 80, sa: 100, sd: 120, sp: 30},
+  },
+  Smeargle: {
+    bs: {hp: 55, at: 20, df: 35, sa: 20, sd: 45, sp: 100},
+  },
+  Smoochum: {
+    abilities: {0: "Oblivious"},
+  },
+  Sneasler: {
+    abilities: {0: "Technician"},
+  },
+  Stantler: {
+    bs: {hp: 73, at: 100, df: 62, sa: 85, sd: 65, sp: 85},
+    types: ["Normal", "Psychic"],
+  },
+  Steelix: {
+    bs: {hp: 75, at: 90, df: 200, sa: 55, sd: 65, sp: 30},
+  },
+  Sudowoodo: {
+    bs: {hp: 75, at: 115, df: 130, sa: 30, sd: 80, sp: 30},
+  },
+  Suicune: {
+    abilities: {0: "Pressure"},
+  },
+  Sunflora: {
+    bs: {hp: 75, at: 55, df: 75, sa: 105, sd: 85, sp: 85},
+    types: ["Grass", "Fire"],
+  },
+  Sylveon: {
+    abilities: {0: "Cute Charm"},
+  },
+  Totodile: {
+    abilities: {0: "Torrent"},
+  },
+  'Typhlosion-Hisui': {
+    abilities: {0: "Blaze"},
+  },
+  Typhlosion: {
+    types: ["Fire", "Ground"],
+    abilities: {0: "Blaze"},
+  },
+  Tyranitar: {
+    abilities: {0: "Sand Stream"},
+  },
+  Umbreon: {
+    abilities: {0: "Synchronize"},
+  },
+  Vaporeon: {
+    abilities: {0: "Water Absorb"},
+  },
+  Venomoth: {
+    bs: {hp: 70, at: 65, df: 60, sa: 115, sd: 75, sp: 90},
+  },
+  Victreebel: {
+    bs: {hp: 80, at: 115, df: 65, sa: 110, sd: 70, sp: 70},
+  },
+  Vileplume: {
+    bs: {hp: 75, at: 80, df: 85, sa: 120, sd: 100, sp: 50},
+  },
+  Vulpix: {
+    abilities: {0: "Flash Fire"},
+  },
+  Weavile: {
+    abilities: {0: "Pressure"},
+  },
+  Wigglytuff: {
+    bs: {hp: 148, at: 70, df: 55, sa: 85, sd: 65, sp: 45},
+    abilities: {0: "Cute Charm"},
+  },
+  Xatu: {
+    bs: {hp: 65, at: 75, df: 70, sa: 100, sd: 70, sp: 100},
+  },
+  Yanmega: {
+    types: ["Bug", "Dragon"],
+    abilities: {0: "Speed Boost"},
+  },
+  Zapdos: {
+    abilities: {0: "Pressure"},
+  },
+  Zubat: {
+    abilities: {0: "Inner Focus"},
+  },
+};
+
+const SV: {[name: string]: SpeciesData} = extend(true, {}, SV_VANILLA, POLISHED_PATCH);
 
 export const SPECIES = [{}, RBY, GSC, ADV, DPP, BW, XY, SM, SS, SV];
 
