@@ -10187,9 +10187,6 @@ const POLISHED_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   'Corsola-Galar': {
     types: ["Ghost", "Rock"],
   },
-  Corsola: {
-    bs: {hp: 65, at: 55, df: 115, sa: 105, sd: 115, sp: 35},
-  },
   Crobat: {
     abilities: {0: "Inner Focus"},
   },
@@ -10239,9 +10236,6 @@ const POLISHED_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   },
   Espeon: {
     abilities: {0: "Synchronize"},
-  },
-  'Farfetch\u2019d': {
-    bs: {hp: 55, at: 110, df: 55, sa: 60, sd: 65, sp: 105},
   },
   Farigiraf: {
     bs: {hp: 120, at: 90, df: 70, sa: 120, sd: 70, sp: 70},
@@ -10369,9 +10363,6 @@ const POLISHED_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   Moltres: {
     abilities: {0: "Pressure"},
   },
-  'Mr. Mime': {
-    bs: {hp: 50, at: 45, df: 65, sa: 100, sd: 125, sp: 100},
-  },
   Ninetales: {
     types: ["Fire", "Ghost"],
     abilities: {0: "Flash Fire"},
@@ -10413,9 +10404,6 @@ const POLISHED_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   },
   Quilava: {
     abilities: {0: "Blaze"},
-  },
-  Qwilfish: {
-    bs: {hp: 65, at: 100, df: 100, sa: 75, sd: 55, sp: 85},
   },
   'Raichu-Alola': {
     bs: {hp: 60, at: 95, df: 50, sa: 105, sd: 85, sp: 121},
